@@ -30,16 +30,9 @@ jobs:
       - name: Run program
         run: dart run
       
-      # - name: Deploy to Gist
-      #   uses: exuanbo/actions-deploy-gist@v1
-      #   with:
-      #     token: ${{ secrets.TOKEN }}
-      #     gist_id: f30f2c018335755f45bad1ad1a853899
-      #     file_path: index.json
-      
-      - uses: popsiclestick/gist-sync-action@v1.2.0
-        id: sync
+      - name: Deploy to Gist
+        uses: exuanbo/actions-deploy-gist@v1
         with:
-          auth: ${{ secrets.TOKEN }}
-          gist_url: https://gist.github.com/Baneeishaque/f30f2c018335755f45bad1ad1a853899
-          github_file: index.json
+          token: ${{ secrets.TOKEN }}
+          gist_id: f30f2c018335755f45bad1ad1a853899
+          file_path: index.json
